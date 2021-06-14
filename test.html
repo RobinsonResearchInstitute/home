@@ -67,12 +67,16 @@ body, html {
 }
 
 .caption span.border {
-  background-color: rgba(0,71,48,0.9);
-  color: #fff;
+  /*background-color: rgba(0,71,48,0.9);
+   color: #fff;*/
+  background-color:transparent;
+  color: #f7f7f7;
   padding: 1vw;
   font-size: 3vw;
   letter-spacing: 0.5vw;
+  font-size:25px;   
 }
+
 
 .contact{
     background-color: rgba(0,71,48,0.9);
@@ -96,12 +100,7 @@ a{
     color:#ddd;
 }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
-}
+
   
 #title{
   background-color: rgba(0,71,48,0.9);
@@ -295,6 +294,40 @@ a{
   100%{}
 }
   
+
+.band1{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+}
+
+.band1 h3{
+    text-align:center;
+}
+
+.band2{
+    color:#ddd;
+    background-color:#282E34;
+    text-align:center;
+    padding:50px 80px;
+    text-align: center;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+  .band1{
+      padding:3rem 10%;
+  }
+  .band2{
+      padding:3rem 10%; 
+  }
+}
+
   
 </style>
 </head>
@@ -335,45 +368,44 @@ a{
   </div>
 </div>
 
-<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-  <h3 style="text-align:center;">About Us</h3>
+<div class="band1">
+  <h3>About Us</h3>
   <p>The Robinson Research Institute is New Zealand’s premier research institute for superconducting magnet science & engineering. Our 35 professional Scientists and Engineers are based within world-class facilities at Victoria University of Wellington, New Zealand, and deliver commercial outcomes and partner-ships around the globe. Our mission is to develop and deliver world-changing new technologies that will enable a global sustainable future.</p>
 </div>
 
 <div class="bgimg-2">
   <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">RESEARCH</span>
+  <span class="border" >RESEARCH</span>
   </div>
 </div>
 
 <div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: center;">
-    <p><a href="https://robinsonresearchinstitute.github.io/research/brochure.html" target="_blank">Read</a> about our research programmes and people.</p>
-  <p>Over 200 peer-reviewed journal <a href="https://robinsonresearchinstitute.github.io/publications/2021.html" target="_blank">publications</a> since 2014.</p>
+  <div class="band2">
+    <p><a href="https://robinson.ac.nz/research/brochure.html" target="_blank">Read</a> about our research programmes and people.</p>
+  <p>Over 200 peer-reviewed journal <a href="https://robinson.ac.nz/publications/" target="_blank">publications</a> since 2014.</p>
   </div>
 </div>
 
 <div class="bgimg-3">
   <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">NEWS & MEDIA</span>
+  <span class="border">NEWS & MEDIA</span>
   </div>
 </div>
 
 <div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: center;">
-  <p>View our <a href="https://robinsonresearchinstitute.github.io/newsmedia/index.html" target="_blank">news and media</a> stories.</p>
-  <p><a href="https://robinsonresearchinstitute.github.io/conductors/index.html" target="_blank">Learn</a> more about superconductivity.</p>
+  <div class="band2">
+  <p>View our <a href="https://robinson.ac.nz/newsmedia/" target="_blank">news and media</a> stories.</p>
+  <p><a href="https://robinson.ac.nz/conductors/" target="_blank">Learn</a> more about superconductivity.</p>
   <p>Access our superconducting wire performance <a href="https://robinson.ac.nz/hts-wire-database/" target="_blank">database</a>.</p>
   </div>
 </div>
 
 <div class="bgimg-1">
   <div class='caption'>
-  <!--<span class="border">COOL!</span>-->
   <div class="contact">
-    <i class="material-icons" style="font-size:25px">place</i> Lower Hutt, NZ<br>
+    <a href="https://goo.gl/maps/GHXrWjqYWTeiYarV6" target="_blank"><i class="material-icons" style="font-size:25px">place</i></a> Lower Hutt, NZ<br>
     <i class="material-icons" style="font-size:25px">phone</i> Phone: +64 4 463 0080<br>
-    <i class="material-icons" style="font-size:25px">email</i> Email: rri-admin@vuw.ac.nz
+    <a href="mailto:rri-admin@vuw.ac.nz"><i class="material-icons" style="font-size:25px">email</i></a> Email: rri-admin@vuw.ac.nz<br>
     <a href="https://www.linkedin.com/company/robinson-research-institute/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   </div>
   </div>

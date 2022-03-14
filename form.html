@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robinson Research Institute</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1{
+  
+  /*opacity: 0.65;*/
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("img/15by5cable1280.jpg");
+  min-height: 100%;
+}
+
+h1{
+    margin:0;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border{
+  background-color: rgba(0,71,48,0.9);
+  color: #fff;
+  padding: 18px;
+  font-size: 3vw;
+  letter-spacing: 10px;
+}
+
+.contact{
+    background-color: rgba(0,71,48,0.9);
+    color: #fff;
+    font-size: 25px;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:400px;
+    letter-spacing:2px;
+    padding:10px;
+}
+
+.container h1 {
+    background-color: rgba(0,71,48,0.9);
+    color: #fff;
+    font-size: 25px;
+    letter-spacing:2px;
+    padding:10px;
+    margin-bottom:1rem;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+</head>
+<body>
+
+<div class="bgimg-1">
+    
+    <div class="container center">
+        <h1>Contact Us</h1>
+        <form target="_blank" action="https://formsubmit.co/tahlia.crabtree@vuw.ac.nz" method="POST">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="col">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="_subject" value="New submission from robinson.ac.nz">
+          <input type="hidden" name="_cc" value="james.storey@vuw.ac.nz">
+          <div class="form-group">
+            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+        </form>
+      </div>
+</div>
+
+</body>
+</html>

@@ -25,6 +25,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel="stylesheet" type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="jsw3.css">
 <style>
 body, html {
   scroll-behavior: smooth;
@@ -321,12 +322,9 @@ a{
 }
   
   .notice{
-  background-color: red;
-  color:white;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%
+   background-color: #c80000;
+            color: white;
+            text-align: center;
 }
 
 .notice a{
@@ -368,6 +366,67 @@ a{
 </head>
 <body>
 
+   <a id="home"></a>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="#home" class="w3-bar-item w3-button">HOME</a>
+            <!--<a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+            <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>-->
+            <a href="https://robinson.ac.nz/newsmedia" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i></i> NEWS</a>
+            <a href="https://robinson.ac.nz/research/brochure.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-laptop"></i></i> RESEARCH</a>
+            <!--<a href="https://robinson.ac.nz/publications" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-book"></i></i> PUBLICATIONS</a>-->
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><i class="fa fa-book"></i> PUBLICATIONS <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="https://robinson.ac.nz/publications" class="w3-bar-item w3-button">PAPERS</a>
+                  <a href="https://robinson.ac.nz/publications/theses.html" class="w3-bar-item w3-button">THESES</a>
+                  <a href="https://robinson.ac.nz/hts-wire-database/" class="w3-bar-item w3-button">SUPERCONDUCTING WIRE DATABASE</a>
+                </div>
+              </div>
+            <a href="https://robinson.ac.nz/conductors" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-play-circle"></i></i> LEARN</a>
+            <!--<a href="#join_us" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-users"></i></i> JOIN US</a>-->
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button"><i class="fa fa-users"></i> JOIN US <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="https://robinson.ac.nz/vacancies" class="w3-bar-item w3-button">STAFF VACANCIES</a>
+                  <a href="https://robinson.ac.nz/vacancies/phd.html" class="w3-bar-item w3-button">MASTER'S AND PHD OPPORTUNITIES</a>
+                  <a href="https://robinson.ac.nz/vacancies/summerRA.html" class="w3-bar-item w3-button">SUMMER INTERNSHIPS</a>
+                  
+                </div>
+              </div>
+            <a href="#contact_footer" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+            
+            <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>-->
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <!--<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+            <a href="#contact_footer" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>-->
+            <a href="https://robinson.ac.nz/newsmedia" class="w3-bar-item w3-button" onclick="toggleFunction()">NEWS</a>
+            <a href="https://robinson.ac.nz/research/brochure.html" class="w3-bar-item w3-button" onclick="toggleFunction()">RESEARCH</a>
+            <a href="https://robinson.ac.nz/publications" class="w3-bar-item w3-button" onclick="toggleFunction()">PUBLICATIONS</a>
+            <a href="https://robinson.ac.nz/conductors" class="w3-bar-item w3-button" onclick="toggleFunction()">LEARN</a>
+            <a href="#join_us" class="w3-bar-item w3-button" onclick="toggleFunction()">JOIN US</a>
+            <a href="#contact_footer" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+            <!--<a href="#" class="w3-bar-item w3-button">SEARCH</a>-->
+        </div>
+        <div class="notice">
+             Apply Now for Our <a href="https://robinson.ac.nz/vacancies" target="_blank">Staff Vacancies</a> and <a href="https://robinson.ac.nz/vacancies/phd.html" target="_blank">PhD & Master's Opportunities</a>
+        </div>
+    </div>
+
+  
+  
+  
 <div class="bgimg-1">
   <div class="caption">
   <!--<span class="border">ROBINSON RESEARCH INSTITUTE</span>-->
@@ -438,9 +497,7 @@ a{
 
 <a id="contact-page"></a>
 <div class="bgimg-1">
-  <div class="notice">
-     Apply Now for Our <a href="https://robinson.ac.nz/vacancies" target="_blank">Staff Vacancies</a> and <a href="https://robinson.ac.nz/vacancies/phd.html" target="_blank">PhD & Master's Opportunities</a>
-  </div>
+ 
   <div class='caption'>
     <div id="join_us">
     <h1>Interested in joining us? </h1>
@@ -449,6 +506,8 @@ a{
       , <a href="https://robinson.ac.nz/vacancies/summerRA.html" target="_blank">Summer Research Assistant Programme</a>
       , or inquire directly using the address below.</p>
   </div>
+  </div>
+  
   <div class="contact">
     <a id="contact_footer"></a>
     <p>
@@ -458,7 +517,7 @@ a{
     <a href="https://www.linkedin.com/company/robinson-research-institute/" target="_blank"><i class="fa fa-linkedin-square w3-hover-opacity"></i></a>
     </p>
   </div>
-  </div>
+
 </div>
 
 

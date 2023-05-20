@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body, html {
+  scroll-behavior: smooth;
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
@@ -79,15 +80,18 @@ body, html {
 }
 
 
-.contact{
-    background-color: rgba(0,71,48,0.9);
+.contact {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(9, 61, 21, 0.6);
+    width:100%;
+}
+
+.contact p{
+    text-align:center;
     color: #fff;
     font-size: 25px;
-    margin-left:auto;
-    margin-right:auto;
-    max-width:400px;
-    letter-spacing:2px;
-    padding:10px;
+    letter-spacing: 2px;
 }
 
 h3 {
@@ -446,10 +450,13 @@ a{
       , or inquire directly using the address below.</p>
   </div>
   <div class="contact">
+    <a id="contact_footer"></a>
+    <p>
     <a href="https://goo.gl/maps/GHXrWjqYWTeiYarV6" target="_blank"><i class="material-icons" style="font-size:25px">place</i></a> Lower Hutt, NZ<br>
     <i class="material-icons" style="font-size:25px">phone</i> Phone: +64 4 463 0080<br>
     <a href="mailto:rri-admin@vuw.ac.nz"><i class="material-icons" style="font-size:25px">email</i></a> Email: rri-admin@vuw.ac.nz<br>
-    <a href="https://www.linkedin.com/company/robinson-research-institute/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/company/robinson-research-institute/" target="_blank"><i class="fa fa-linkedin-square w3-hover-opacity"></i></a>
+    </p>
   </div>
   </div>
 </div>

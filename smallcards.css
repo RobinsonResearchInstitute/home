@@ -1,0 +1,172 @@
+
+
+
+
+
+
+.row{
+    margin:1rem;
+    color:black;
+}  
+
+
+
+
+
+
+
+
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    gap:1em;
+    padding:1rem;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  /*padding-top:0.3rem;*/
+  padding-left: 1rem;
+  padding-right:1rem;
+  /*padding-bottom:1rem;*/
+  background-color: #f1f1f1;
+  /*margin-bottom:1rem;*/
+  /*max-width:40ch;*/
+  margin-left:auto;
+  margin-right:auto;
+  font-size:1rem; 
+  /*margin-top:0;*/
+}
+  
+.card p{
+  line-height:1.5;
+  /*padding-left:1.9rem;
+  padding-right:1.9rem;*/
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* this can be any value you want */
+    color:black;
+
+}
+
+.card p i{
+  color:rgb(0, 119, 81);
+}
+  
+.card h2{
+  padding-left:1rem;
+  padding-right:1rem;
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:1rem;
+  padding-bottom:1rem;
+  margin-left:-1rem;
+  margin-right:-1rem;
+  background-color:rgb(0,71,48);
+  color:white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-shadow:none;
+
+} 
+
+.card h2 a{
+    text-decoration: none;
+    color:white;
+}
+
+.card h2 a:hover{
+    background-color:rgb(0, 119, 81);
+}
+
+.card h2 a[href^="http"]::after{
+  font-family:'FontAwesome';
+  font-weight:900;
+  content:' \f14c';
+}
+
+.copybutton::after{
+  font-family:'FontAwesome';
+  font-weight:400;
+  content:' \f0c1';
+}
+
+/*
+.card h5{
+    padding-left:1.9rem;
+}
+*/
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 1.25rem;
+  text-align: center;
+  background: #ddd;
+  margin-top: 1.25rem;
+}
+
+.credit {
+    color: #9E9E9E;
+    font-size: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+/*
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+*/
+
+#more_news{
+  color:black;
+  float:right;
+}
+ 
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  
+     .leftcolumn, .rightcolumn {   
+  width: 100%;
+  padding: 0;
+}
+
+h1,h2{
+font-size:1.2rem;
+line-height: 1.5;
+}
+
+.card{
+padding-left:1rem;
+padding-right:1rem;
+}      
+
+.card h2{
+margin-left:-1rem;
+margin-right:-1rem;   
+} 
+    
+.card p{
+font-size:1rem;
+}
+    
+    
+}
+

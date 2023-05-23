@@ -481,6 +481,15 @@ a{
   </div>
 </div>
 
+<div class="row">
+        Latest Papers
+        <div class="grid" id="latest_publications">
+        </div>
+        
+        <a href="https://robinson.ac.nz/publications/" id="more_news">More papers >>></a><br>
+        
+      </div>
+
 <div class="bgimg-3">
   <div class="caption">
   <span class="border">NEWS & MEDIA</span>
@@ -495,16 +504,25 @@ a{
   </div>
 </div>
 
+ <div class="row">
+        Latest News
+         <div class="grid" id="latest_news">
+         </div>
+         
+         <a href="https://robinson.ac.nz/newsmedia/" id="more_news">More news >>></a><br>
+         
+       </div>
+
 <a id="contact-page"></a>
 <div class="bgimg-1">
  
   <div class='caption'>
     <div id="join_us">
     <h1>Interested in joining us? </h1>
-    <p>Browse our advertised <a href="https://robinson.ac.nz/vacancies/" target="_blank">vacancies</a>
-      , <a href="https://robinson.ac.nz/vacancies/phd.html" target="_blank">PhD & Master's opportunities</a>
-      , <a href="https://robinson.ac.nz/vacancies/summerRA.html" target="_blank">Summer Research Assistant Programme</a>
-      , or inquire directly using the address below.</p>
+    <p>Browse our advertised <a href="https://robinson.ac.nz/vacancies/" target="_blank">vacancies</a>,
+      <a href="https://robinson.ac.nz/vacancies/phd.html" target="_blank">PhD & Master's opportunities</a>,
+      <a href="https://robinson.ac.nz/vacancies/summerRA.html" target="_blank">Summer Research Assistant Programme</a>,
+      or inquire directly using the address below.</p>
   </div>
   </div>
   
@@ -551,6 +569,188 @@ a{
                 x.className = x.className.replace(" w3-show", "");
             }
         }
+  
+  
+  function includeNews(file) {
+       
+        var z, xhttp;
+       
+        z = document.getElementById("latest_news");
+
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+
+                const parser = new DOMParser();
+                const htmlDoc = parser.parseFromString(this.responseText, 'text/html')
+                
+               
+                let cards = htmlDoc.getElementsByClassName("card");
+               
+                
+                let children = cards[0].getElementsByTagName('img');
+                
+                for(var c = 0; c<3; c++){
+                  children = cards[0].children;
+                  
+                  var pfound = 0;
+                  var anchor;
+                  for(var i = 0; i<children.length; i++){
+                    let name = children[i].tagName;
+                    switch(name){
+                      case 'A':
+                        anchor=children[i].id;
+                        break;
+                      case 'H2':
+                        let links = children[i].getElementsByTagName('A');
+                        if(links[0]==null){
+                          var link = document.createElement('A');
+                          link.href = "https://robinson.ac.nz/newsmedia/?year2023#"+anchor;
+                          link.innerText = children[i].innerText;
+                          children[i].innerText="";
+                          children[i].appendChild(link);
+
+                        }
+                        break
+                      case 'H5':
+                        break;
+                      case 'P':
+                        if(pfound==0){
+                          //console.log('pfound'); //keep first p-element
+                          pfound=1;
+                          break;
+                        }
+                      default:
+                        children[i].parentNode.removeChild(children[i]);
+                        i--; //children.length changes size after removing an element.
+                        break;  
+                    }
+                  }
+                  z.appendChild(cards[0]);
+                }
+                
+              }
+              if (this.status == 404) { z.innerHTML = "Page not found."; }
+
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+
+        }
+      };
+
+
+      function includePapers(file) {
+       
+        var z, xhttp;
+        
+        z = document.getElementById("latest_publications");
+
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+
+                const parser = new DOMParser();
+                const htmlDoc = parser.parseFromString(this.responseText, 'text/html')
+                
+               
+                let cards = htmlDoc.getElementsByClassName("csl-entry");
+               
+                
+                
+                
+                for(var c = 0; c<3; c++){
+                  let children = cards[c].children;
+                 
+                  for(var i = 0; i<children.length; i++){
+                    let name = children[i].className;
+                    switch(name){
+                        //remove numbering
+                      case 'csl-left-margin':
+                         children[i].parentNode.removeChild(children[i]);
+                         i--; //children.length changes size after removing an element.
+                        break;
+                      
+                      default:
+                       
+                        break;  
+                    }
+                  }
+                  
+
+
+                  let card = document.createElement("DIV");
+                card.className = "card";
+
+                  let boldchildren = children[0].getElementsByTagName("B");
+
+                  
+                    
+
+                  if(boldchildren[0]){
+                   
+
+                    let heading = document.createElement("H2");
+                    
+                    if(children[1]){
+                       //console.log(children[1].firstElementChild.href);
+                       let link = document.createElement("A");
+                        link.href = children[1].firstElementChild.href;
+                        link.textContent = boldchildren[0].innerText;
+                        link.setAttribute('target','_blank');
+                        heading.appendChild(link);
+                    }
+                    else{
+                        heading.textContent = boldchildren[0].innerText;
+                    }
+                    
+                    card.appendChild(heading);
+                }
+                    let para = document.createElement("P");
+                    
+                    let htmlcontent = children[0].innerHTML;
+                    if(htmlcontent){
+                    let authors = htmlcontent.substring(htmlcontent.indexOf("</b>")+4);
+                    
+                        para.innerHTML = authors;
+                        card.appendChild(para);
+                    }
+                    
+                    z.appendChild(card);
+
+                }
+
+
+                
+              }
+              if (this.status == 404) { z.innerHTML = "Page not found."; }
+
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+
+        }
+      };
+
+      
+        includePapers('https://robinson.ac.nz/publications/2023_list.html');
+
+      
+        includeNews('https://robinson.ac.nz/newsmedia/media_2023.html');
 
     </script>
 

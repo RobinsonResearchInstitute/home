@@ -752,12 +752,12 @@ a{
                        //console.log(children[1].firstElementChild.href);
                        let link = document.createElement("A");
                         link.href = children[1].firstElementChild.href;
-                        link.textContent = boldchildren[0].innerText;
+                        link.innerHTML = boldchildren[0].innerHTML;
                         link.setAttribute('target','_blank');
                         heading.appendChild(link);
                     }
                     else{
-                        heading.textContent = boldchildren[0].innerText;
+                        heading.innerHTML = boldchildren[0].innerHTML;
                     }
                     
                     card.appendChild(heading);

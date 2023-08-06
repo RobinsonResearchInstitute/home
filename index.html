@@ -647,9 +647,7 @@ a{
                   for(var i = 0; i<children.length; i++){
                     let name = children[i].tagName;
                     switch(name){
-                      case 'A':
-                        anchor=children[i].id;
-                        break;
+                      
                       case 'H2':
                         let links = children[i].getElementsByTagName('A');
                         if(links[0]==null){
@@ -669,6 +667,10 @@ a{
                           pfound=1;
                           break;
                         }
+
+                      case 'A':
+                        anchor=children[i].id;
+                                                
                       default:
                         children[i].parentNode.removeChild(children[i]);
                         i--; //children.length changes size after removing an element.

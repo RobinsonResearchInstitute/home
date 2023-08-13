@@ -89,6 +89,11 @@
   content:' \f14c';
 }
 
+.card p a{
+  color: rgb(0,130,63);
+  text-decoration: none;
+}
+
 .copybutton::after{
   font-family:'FontAwesome';
   font-weight:400;

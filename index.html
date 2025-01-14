@@ -670,7 +670,8 @@ a{
 
                         case 'DIV':
                             //this case is for when we have a flex box div on the card.
-                            
+                            //console.log(children[i]);
+                            if(children[i].className=='flex-container'){
                             let img = children[i].getElementsByTagName('IMG');
                             children[i].removeChild(img[0]);
                             
@@ -681,10 +682,13 @@ a{
                                 //remove extra paragraphs if they exist
                                 for(var j = 1;j<size;j++){
                                     children[i].removeChild(paras[1]);
+                                    
                                 }
-                            
-                            break;
+                        
+                                break;
+                                
                             }
+                          }
                                
                       case 'A':
                         anchor=children[i].id;

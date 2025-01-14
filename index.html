@@ -668,6 +668,24 @@ a{
                           break;
                         }
 
+                        case 'DIV':
+                            //this case is for when we have a flex box div on the card.
+                            
+                            let img = children[i].getElementsByTagName('IMG');
+                            children[i].removeChild(img[0]);
+                            
+                            let paras = children[i].getElementsByTagName('P');
+                            
+                            let size = paras.length;
+                            if(size>0){
+                                //remove extra paragraphs if they exist
+                                for(var j = 1;j<size;j++){
+                                    children[i].removeChild(paras[1]);
+                                }
+                            
+                            break;
+                            }
+                               
                       case 'A':
                         anchor=children[i].id;
                                                 

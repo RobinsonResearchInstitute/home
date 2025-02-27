@@ -640,6 +640,7 @@ a{
                 let children = cards[0].getElementsByTagName('img');
                 
                 for(var c = 0; c<3; c++){
+                  if(!cards[0]) return;
                   children = cards[0].children;
                   
                   var pfound = 0;

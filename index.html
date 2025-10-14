@@ -120,7 +120,7 @@ a{
 
   
 #title{
-  background-color: rgba(0,71,48,0.9);
+  /*background-color: rgba(0,71,48,0.9);*/
   display:inline-block;
   padding-top: 5px;
   padding-bottom:5px;
@@ -136,6 +136,52 @@ a{
     padding-right:1rem;
 }
 
+.glass-card {
+ /* width: 240px;
+  height: 360px;*/
+  background: rgba(0, 71, 48, 0.64);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+  /*border-radius: 10px;*/
+  border: 1px solid rgba(0, 71, 48, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    /*inset 0 0 10px 5px rgba(255, 255, 255, 1);*/
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 71, 48, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 71, 48, 0.8),
+    transparent,
+    rgba(0, 71, 48, 0.3)
+  );
+}
 
 #title p {
     display: inline-block;
@@ -475,7 +521,7 @@ a{
 <div class="bgimg-1">
   <div class="caption">
   <!--<span class="border">ROBINSON RESEARCH INSTITUTE</span>-->
-  <div id="title">    
+  <div id="title" class="glass-card">    
     <div id="robinson_word">
     <p>R</p>
     <p>O</p>
